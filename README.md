@@ -2,7 +2,11 @@
 
 Survey data visualization
 
+### Dashboard
 ![dashboard](https://user-images.githubusercontent.com/43814350/119695203-a0d96a00-be56-11eb-9dc4-8f66c8eef79e.png)
+
+### Map
+![map](https://user-images.githubusercontent.com/43814350/119695505-e6963280-be56-11eb-9a40-662e42cb1c15.png)
 
 ## Installation
 
