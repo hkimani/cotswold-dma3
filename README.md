@@ -60,7 +60,7 @@ psql -f /opt/dump.sql postgres
 
 ```
 
-An additional backup script is available for creating data dumps
+An additional backup script is available for creating data dumps (backend/db/pgbackup.sh)
 
 ### Backend project files
 
