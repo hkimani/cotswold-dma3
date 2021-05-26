@@ -1,0 +1,14 @@
+.customBar::-webkit-scrollbar {
+    background-color: #202022;
+}
+
+.customBar::-webkit-scrollbar-corner {
+    background-color: #202022;
+}
+
+.customBar::-webkit-scrollbar-thumb {
+    border: 3px solid #202022;
+    min-height: 24px;
+    border-radius: 8px;
+    background-color: #585859;
+}

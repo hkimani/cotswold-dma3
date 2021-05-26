@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  postgresql:
+    restart: unless-stopped
+    image: postgres11-postgis2.5
+    build:
+      context: ./backend/db
+      dockerfile: Dockerfile
+    volumes:
+      - /postgis-data:/var/lib/postgresql
+      - /dbbackups:/opt/backups
+    environment:
+      # If you need to create multiple database you can add coma separated databases eg gis,data
+      - POSTGRES_PASSWORD
+    ports:
+      - 25432:5432
+
+  dma3:
+    restart: unless-stopped
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: /bin/sh /opt/dma3/scripts/entrypoint.sh
+    volumes:
+      - static-folder:/opt/dma3/static
+    environment:
+      - ENV=Production
+      - POSTGRE_PASS
+      - POSTGRE_DEV_PASS
+      - DJANGO_SECRET
+      - DJANGO_PROD=True
+    depends_on:
+      - postgresql
+
+  proxy:
+    restart: unless-stopped
+    build:
+      context: ./backend/nginx
+      dockerfile: Dockerfile
+    volumes:
+      - static-folder:/opt/dma3/static
+    ports:
+      - "9090:9090"
+    depends_on:
+      - dma3
+
+  frontend:
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    image: "react_dma3"
+    ports:
+      - "8801:80"
+
+volumes:
+  static-folder:

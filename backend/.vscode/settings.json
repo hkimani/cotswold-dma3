@@ -1,0 +1,8 @@
+{
+  "python.pythonPath": "C:\\Users\\kimanih\\.virtualenvs\\backend-CnNw4Usj\\Scripts\\python.exe",
+  "python.formatting.provider": "black",
+  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": false,
+  "python.linting.pylintEnabled": true
+}
