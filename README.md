@@ -31,6 +31,10 @@ npm run build
 
 A [PostgreSQL](https://www.postgresql.org/) database installation will be required to load the survey data which requires a [PostGIS](https://postgis.net/) extension to to load the data correctly.
 
+If on windows, you may require to install the [OSGeo4W](https://trac.osgeo.org/osgeo4w/) extension to be able to use Django with PostGIS.
+
+More information be found on [The Open Source Geospatial Foundation](https://www.osgeo.org/).
+
 To load the data:
 
 ```bash
@@ -87,17 +91,17 @@ The backend will be served using [uWSGI](https://uwsgi-docs.readthedocs.io/en/la
 
 For the production build to work, the following environment variables should be set appropriately in the docker yaml file:
 
-#### - POSTGRES_PASSWORD
+##### - POSTGRES_PASSWORD
 
-#### - POSTGRES_PASS
+##### - POSTGRES_PASS
 
-#### - POSTGRE_DEV_PASS
+##### - POSTGRE_DEV_PASS
 
-#### - ENV=Production
+##### - ENV=Production
 
-#### - DJANGO_PROD=True
+##### - DJANGO_PROD=True
 
-#### - DJANGO_SECRET
+##### - DJANGO_SECRET
 
 Navigate to project root directory and run command:
 
